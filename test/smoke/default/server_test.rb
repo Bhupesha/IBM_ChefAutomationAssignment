@@ -27,5 +27,9 @@ describe file('/etc/httpd/conf/httpd.conf') do
   it { should be_a_file }
   its(:content) { should match(/User apache/) }
   its(:content) { should match(/Group apache/) }
+end
 
+# make sure when we run  curl localhost in testing container display the welcome page
+describe command("curl localhost") do
+     its("stdout") { should match "Welcome IBM" }
 end
