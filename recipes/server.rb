@@ -18,3 +18,12 @@ package package_name
 service service_name do
   action [:enable, :start]
 end
+
+#custom home page.
+file '/var/www/html/index.html' do
+  content '<html>
+  <body>
+    <h1>Welcome IBM</h1>
+  </body>
+</html>'
+end
