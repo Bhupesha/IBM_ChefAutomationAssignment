@@ -33,3 +33,8 @@ end
 describe command("curl localhost") do
      its("stdout") { should match "Welcome IBM" }
 end
+
+#Checking  default http port 80 is opened to access webpage from other machine.
+describe port(80) do
+  it { should be_listening }
+end
