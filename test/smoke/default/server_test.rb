@@ -8,3 +8,24 @@
 describe package('httpd') do
   it { should be_installed }
 end
+
+
+# Check httpd package is Installed, enabled and running
+describe service('httpd') do
+  it { should be_enabled }
+  it { should be_running }
+end
+
+
+#Checking that the package directory exists
+describe file('/etc/httpd') do
+  it { should be_directory }
+end
+
+#Checking that the file exists and that the file contains a given string in httpd.confog file
+describe file('/etc/httpd/conf/httpd.conf') do
+  it { should be_a_file }
+  its(:content) { should match(/User apache/) }
+  its(:content) { should match(/Group apache/) }
+
+end
