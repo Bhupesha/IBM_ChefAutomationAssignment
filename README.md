@@ -11,9 +11,7 @@ inspec version: 1.36.1
 
 # Install docker on Ubuntu
 apt-get install docker.io
-
 systemctl start docker
-
 systemctl enable docker
 
 # Install ruby gem 
@@ -21,6 +19,21 @@ apt-get install gem
 
 # Install kitchen-docker
 chef gem install kitchen-docker
+
+# Kitchen Commands
+kitchen list 
+# Instance           Driver  Provisioner  Verifier  Transport  Last Action  Last Error
+default-ubuntu-1604  Docker  ChefZero     Inspec    Ssh        Set Up       Kitchen::ActionFailed
+default-centos-62    Docker  ChefZero     Inspec    Ssh        Verified     <None>
+
+kitchen create
+kitchen converge
+kitchen verify
+kitchen test
+kitchen Destroy
+ 
+ 
+
 
 
 finally what decision I have made to speed up feedback cycle  even more.
