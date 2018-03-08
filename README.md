@@ -9,4 +9,10 @@ berks version: 6.3.1
 kitchen version: 1.17.0
 inspec version: 1.36.1
 
+# Install docker on Ubuntu
+apt-get install docker.io
+systemctl start docker
+systemctl enable docker
+
+
 
