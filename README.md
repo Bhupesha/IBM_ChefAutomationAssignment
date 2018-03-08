@@ -14,6 +14,10 @@ apt-get install docker.io
 systemctl start docker
 systemctl enable docker
 
+# Install ruby gem 
+apt-get install gem
+
 # Install kitchen-docker
- gem install kitchen-docker
+chef gem install kitchen-docker
+
 
