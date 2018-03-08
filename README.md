@@ -21,8 +21,10 @@ apt-get install gem
 chef gem install kitchen-docker
 
 # Kitchen Commands
-kitchen list 
-# Instance           Driver  Provisioner  Verifier  Transport  Last Action  Last Error
+kitchen list
+
+Instance           Driver  Provisioner  Verifier  Transport  Last Action  Last Error
+
 default-ubuntu-1604  Docker  ChefZero     Inspec    Ssh        Set Up       Kitchen::ActionFailed
 default-centos-62    Docker  ChefZero     Inspec    Ssh        Verified     <None>
 
