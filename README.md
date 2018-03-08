@@ -11,7 +11,9 @@ inspec version: 1.36.1
 
 # Install docker on Ubuntu
 apt-get install docker.io
+
 systemctl start docker
+
 systemctl enable docker
 
 # Install ruby gem 
