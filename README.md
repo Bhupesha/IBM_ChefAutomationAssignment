@@ -33,6 +33,8 @@ kitchen converge
 kitchen verify
 kitchen test
 kitchen Destroy
+
+kitchen login default-ubuntu-1604(Instance)
  
  
 
