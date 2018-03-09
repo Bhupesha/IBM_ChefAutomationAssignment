@@ -110,4 +110,5 @@ if you want run multile test suites against multiple operating system  takes muc
 
 https://learn.chef.io/modules/unit-test-with-chefspec/linux/create-a-multiplatform-cookbook/
 https://learn.chef.io/modules/unit-test-with-chefspec/windows/create-a-web-content-cookbook#/
+https://github.com/chef/inspec/tree/master/test/cookbooks/os_prepare/recipes
 
