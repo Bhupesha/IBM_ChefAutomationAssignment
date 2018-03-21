@@ -123,7 +123,7 @@ After Git merge will it be necessary to do a git commit?
 
 we have R1-Reasource type (chron), R2(Directory), R2(file), R4(package) what is the Order of the execution of Reasouces?
 
-How to pass parameters from One job to next job?
+How to pass parameters from One job to next job? then how you would retrieved it?
 
 find the Highest number a, b, c?
 
