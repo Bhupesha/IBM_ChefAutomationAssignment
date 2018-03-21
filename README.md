@@ -114,11 +114,18 @@ https://github.com/chef/inspec/tree/master/test/cookbooks/os_prepare/recipes
 
 
 Why we need staging Area in Git?
+
 How can we retrieve a single file instead of doing a git clone?
+
 what exactly happens when you do bootstrapping?
+
 After Git merge will it be necessary to do a git commit?
+
 we have R1-Reasource type (chron), R2(Directory), R2(file), R4(package) what is the Order of the execution of Reasouces?
+
 How to pass parameters from One job to next job?
+
 find the Highest number a, b, c?
+
 we have a text file, count the numbers of each occurence of word from file?
 
