@@ -129,3 +129,5 @@ find the Highest number a, b, c?
 
 we have a text file, count the numbers of each occurence of word from file?
 
+HTTP Error 504 – Gateway Timeout" Cause: One server did not receive a timely response from another server that it was accessing while attempting to load the web page or fill another request by the browser. This usually means that the other server is down or not working properly.
+
