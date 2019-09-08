@@ -8,5 +8,5 @@ we have R1-Reasource type (chron), R2(Directory), R2(file), R4(package) what is 
 How to pass parameters from One job to next job?
 find the Highest number a, b, c?
 we have a text file, count the numbers of each occurence of word from file?
-How you define ?
+How you define CI?
 
