@@ -131,3 +131,17 @@ we have a text file, count the numbers of each occurence of word from file?
 
 HTTP Error 504 – Gateway Timeout" Cause: One server did not receive a timely response from another server that it was accessing while attempting to load the web page or fill another request by the browser. This usually means that the other server is down or not working properly.
 
+How do you restrict the containers by unauthorized access?
+what is Namespace in docker?
+how do you run the deployment in Kubernetes?
+what is the advantage/disadvantage  of running kubernetes in Azure?
+How do you create Custom_images using docker?
+When you create an AKS cluster, a cluster master is automatically created and configured. 
+This cluster master is provided as a managed Azure resource abstracted from the user.
+There's no cost for the cluster master, only the nodes that are part of the AKS cluster
+minimum ip address range and Maximum IP address range in CIDR notation.
+
+
+
+
+
