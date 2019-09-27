@@ -62,7 +62,7 @@ list[10] # List index out of range Error
 list[2:] # display ['c', 'd', 'e'] display including first element
 list[:4] # dispaly ['a', 'b', 'c', 'd'] dispaly excluding last index element
 
-Covert list in to a string 
+Convert list in to a string 
 ===========================
 weekdays = ['sun','mon','tue','wed','thu','fri','sat']
 weekdays = "".join(weekdays)
