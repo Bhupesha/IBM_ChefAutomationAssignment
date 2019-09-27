@@ -1,1 +1,10 @@
-
+1. Print directory contents in a directory [ it dispalys contents recurively in a folder]
+=========================================================================================
+import os
+def print_directory_contents(sPath):
+	for sChild in os.listdir(sPath):
+		sChildpath = os.path.join(sPath, sChild)
+		if os.path.isdir(sChildpath):
+			print_directory_contents(sChildpath)
+		else:
+			print(sChildpath)
