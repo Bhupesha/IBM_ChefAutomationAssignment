@@ -30,3 +30,28 @@ lstNames = [ "bhupesh", "mahesh","Raju","Manohar", "Raju", "Tanushree","Raju"]
 
 4. How to read & Write and append values  to a file in Pyton
 ============================================================
+
+with open('C:\Assignments\Python_assignments\Python_Excersises\Python_example.txt', 'r') as file:
+	file.read()
+	
+with open('C:\Assignments\Python_assignments\Python_Excersises\Python_example.txt', 'w+') as file:
+	file.writelines("my name is Bhupesh")
+	file.close()
+	
+Note: when you write to a file Erase the Original Content and write to a File @ the Begining of the file
+
+
+with open('C:\Assignments\Python_assignments\Python_Excersises\Python_example.txt', 'a+') as file:
+	file.writelines("my name is Bhupesh")
+	file.close()
+	
+Note: when you do this Operation append new values to existing lines "my name is Maheshmy name is Mahesh"
+
+
+Write to Next Line(append) using Python
+=======================================
+with open('C:\Assignments\Python_assignments\Python_Excersises\Python_example.txt', 'a+') as file:
+	file.writelines("my name is Mahesh \r\n")
+	file.close()
+
+
