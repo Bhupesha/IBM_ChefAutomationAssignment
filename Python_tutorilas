@@ -54,4 +54,10 @@ with open('C:\Assignments\Python_assignments\Python_Excersises\Python_example.tx
 	file.writelines("my name is Mahesh \r\n")
 	file.close()
 
-
+ What Do You Think Is The Output Of The Following Code Fragment? Is There Any Error In The Code?
+=======================================================================================================
+list = ['a', 'b', 'c', 'd', 'e']
+list[2] # displaying 'c'
+list[10] # List index out of range Error
+list[2:] # display ['c', 'd', 'e'] display including first element
+list[:4] # dispaly ['a', 'b', 'c', 'd'] dispaly excluding last index element
