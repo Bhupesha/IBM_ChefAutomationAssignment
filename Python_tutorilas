@@ -10,5 +10,23 @@ def print_directory_contents(sPath):
 		else:
 			print(sChildpath)
 
-2. Print the Highest element in a list
+2. Print the Highest element(number) in a list
 ======================================
+num_list = [2, 3, 8, 5, 4, 9,4]
+
+length = len(num_list)
+def find_maxnum(l, length):
+	max_num = num_list[0]
+	for i in range(1, length):
+		if num_list[i] > max_num:
+			max_num = num_list[i]
+	print(max_num)
+
+3. Count the number of Duplicates in a List
+=============================================
+lstNames = [ "bhupesh", "mahesh","Raju","Manohar", "Raju", "Tanushree","Raju"]
+[[name, lstNames.count(name)] for name in set(lstNames)]
+
+
+4. How to read & Write and append values  to a file in Pyton
+============================================================
