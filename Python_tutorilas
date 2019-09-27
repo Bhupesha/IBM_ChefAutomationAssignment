@@ -1,4 +1,4 @@
-1. Print directory contents in a directory [ it dispalys contents recurively in a folder]
+1. Print directory contents in a directory [ Dispalys contents recurively in a folder]
 =========================================================================================
 import os
 def print_directory_contents(sPath):
