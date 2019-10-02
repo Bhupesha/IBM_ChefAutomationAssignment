@@ -21,6 +21,8 @@ def find_maxnum(l, length):
 		if num_list[i] > max_num:
 			max_num = num_list[i]
 	print(max_num)
+	
+find_maxnum(num_list, length)	
 
 3. Count the number of Duplicates in a List
 =============================================
