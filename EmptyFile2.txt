@@ -10,3 +10,8 @@ find the Highest number a, b, c?
 we have a text file, count the numbers of each occurence of word from file?
 How you define CI?
 
+How do you restrict the containers by unauthorized access?
+what is Namespace in docker?
+how do you run the deployment in Kubernetes?
+what is the advantage/disadvantage  of running kubernetes in Azure?
+
