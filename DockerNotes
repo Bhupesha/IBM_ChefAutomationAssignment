@@ -1,0 +1,18 @@
+Volume is for mounting data between container and host
+If I run docker container without any -v arguments will any volumes get created?
+
+-v is not for creating the volume, just to mount the data from and to
+
+-v [host_path]:[container_path],
+
+here host_path, your server directory path where you want to mout the data to
+
+container_path, container directory path mount date from
+
+If I do specify a volume (which is not a mount to some location in host) does the volume become this container's writable layer?
+
+When the path doesn't exist in the host. But you have mountaed it to container, there are two cases here.
+
+CASE 1: If you want to mount some config files from your machine to container if the container expects that file while running then it throws error in the logs
+
+CASE 2: If you want to mount the volume from container to host machine. When cotainer starts running it creates a folder in the host machine and writes the data to the host machine mounted directory.
