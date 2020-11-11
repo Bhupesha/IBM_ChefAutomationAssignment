@@ -1,0 +1,251 @@
+
+
+DevOps is a set of practices that works to automate and integrate the processes between software development and IT teams, 
+so they can build, test, 
+and release software faster and more reliably. 
+The term DevOps was formed by combining the words “development” and “operations” and signifies a 
+cultural shift that bridges the gap between development and operation teams, 
+which historically functioned in siloes. 
+
+
+Good afternoon to every one, welcome to this session.
+Myself bhupesh, I have been working in Optum from past 2 and half year.
+I am working for BTB, as devops engineer, Involved Devops, Test Automation and development  as well.
+
+Before going to explain CI/CD devops practice , will give you little bit background. 
+I believe  most of the memebers already know  this concept, 
+Just to reiterate to few audians those who were new to devops practice.
+
+
+Back in days, what was happening  we were doing traditional way of depoyment and we were following water fall model 
+
+- developpers made files changes in his local work station and put it in shared folder( that time we doesn't have Robust version control system)
+- Build engineer will pick up those files, compile the application, if any errors inform back to development team
+  create a war or exe file out of those files and deploy to development/QA Box.
+- inform to QA team, testers will do manual testing, if there is any bug inform back to dev team.
+- Again this process is repetitive of each and every changes.
+- If everything goes fine in QA box, eventually  deployment engineer will deploy to stage and Production.
+- so In the this  manual process of Integration, Build, Deploy and release, 
+- for each steps we had manual intervention of developpers, QA, Integration, Build engineer,deployment and Release engineer.
+- for the release deployed to QA/stage/production taking lot of time.     
+
+since many opensource tools comes to market  CI tools(jenkins), Version Control system (Git), we have automated the whole process.
+
+Then what is CI?
+================
+Continious Integartion is a Software development practice, let's say we have team of 15 developppers are there.
+so each memeber integrate his work daily, it leads to multiple Integration.
+so each integration is verified by an automated build to detect erros as early as possible.
+
+
+CI Basically it solves many problems
+- Check in code in frequently.
+- Automate the build and test portion.
+- Always test the code locally before checking it in.
+- Never merge any failed branches to the main branch.
+- Reduce integration problems allowing you to deliver software more rapidly
+- reduces the time, cost.
+- increases more efficiency and relaibality.
+- Notify the developpers about build report Sucess or failure.
+- you can achieve continious CI agile development and test driven development.
+- Committing code frequently and giving continious feedback
+- Spend less time debugging and more time adding features.
+- Enforces discipline of frequent automated testing
+- Automate the build and deployment.
+
+
+
+what is continious Delivery?
+============================
+Before being pushing to production, we do test manually unit testing, integration testing, system testing
+In continuous delivery, the team decides what and when to deploy new updates to the customers.
+here code changes will go through multiple fixes and feedback Before pushing to production.
+
+
+what is continious deployment?
+==============================
+The goal is to release a new version whenever developers make changes and automatically get those changes to the end users. 
+Manual testing is not an option in continuous deployment as it slows down the process.
+
+Again Before going to discuss about Docker Overview.let's discuss about Virtualization
+
+Traditionally we were doing package deployment not Image deployment.
+- download the Souce code in Build Machine.
+- Compile the Apllication
+- Create a Deployment Package, Zip the deployment Package.
+- Upload the Zip file to Nexus or Artifactory
+- Download to Deplopyment Box and replace with deployment files and restart the webserver.
+
+here disadvantage is that, Avialbality of application 100% not available due to hardware failures, 
+can't guarantee that application works in developper machine might not be working in production.
+This is where docker comes in to picture.
+
+
+Before Virtualization
+=============================
+Before virtualizatio, Let's say I wanted to deploy one application we need to buy and build a dedicated server for it. 
+if we have 10 application mysql, IIS, tomcat, Apache we needed 10 servers, so 10 purchase orders, 10 operating system licence, 
+10 rack positions, 10 sets of reduntant power and cooling. 10 sets of probably reduntant networking and storage infrastrucure too. 
+network cables and switches each applications required a tons of infrastructure. 
+So in order to spin up a new application will take from weeks to months.
+Even after this costly set up my application requires less resource 4 GB of RAM and 5% of CPU. 
+so server utilization is just 10% out of 100% so we are wasting so much resource.
+
+Then Virtualiazation Solves this Problem:
+=========================================
+Type 1 hypervisor
+The hypervisor is a piece of software that enables virtulization.
+A bare-metal hypervisor (Type 1) is a layer of software we install directly on top of a physical server and its underlying hardware. 
+this layer acts as a platform for the VMs to be created on, There is no software or any operating system in between,
+hence the name bare-metal hypervisor.
+With type 1 hypervisors, you can assign more resources to your virtual machines than you have available. 
+For example, if you have 128GB of RAM on your server and eight virtual machines, you can assign 24GB of RAM to each of them. 
+This totals to 192GB of RAM, but VMs themselves will not actually consume all 24GB from the physical server. 
+The VMs think they have 24GB when in reality they only use the amount of RAM they need to perform particular tasks.
+
+The hypervisor allocates only the amount of necessary resources for an instance to be fully functional. 
+This is one of the reasons all modern enterprise data centers, such as phoenixNAP, use type 1 hypervisors.
+These are the most common type 1 hypervisors:
+
+Again Type 2 hypervisor:
+========================
+
+This type of hypervisor runs inside of an operating system of a physical host machine.
+This is why we call type 2 hypervisors – hosted hypervisors, 
+Type 2 hypervisors are typically found in environments with a small number of servers.
+There is no need to install separate software on another machine to create and maintain your virtual environment.
+You do need to be careful when allocating actual resources with this type of hypervisor.
+Bare-metal hypervisors can dynamically allocate available resources depending on the current needs of a particular VM. 
+A type 2 hypervisor occupies whatever you allocate to a virtual machine.
+When you assign 8GB of RAM to a VM, that amount will be taken up even if the VM is using only a fraction of it. 
+If the host machine has 32GB of RAM and you create three VMs with 8GB each, you are left with 8GB of RAM to keep the physical machine running. 
+Creating another VM with 8GB of ram would bring down your system. This is critical to keep in mind, so as to avoid over-allocating resources and 
+crashing the host machine.
+
+Type 2 hypervisors are convenient for testing new software and research projects
+
+so  After hyperviser virtualization, finally we moved from 1:1 to a model of multiple application running per single physical server. 
+so we are utilizing the reasources to a maximum extent. needless to say this was a revolution and a much better model
+Virtualization is widely used, it's the go-to technology of cloud infrastucture. 
+So with virtualization you can scale up or scale down Disk space, RAM and CPU Basically we are running VM for our local development.
+
+But again this model is also far from the perfect.
+* each VM runs on it's own operating system (guest operating system) inside a hardware simulated environment provided
+by a programme called hypervisor running on the physical machine.
+* let's say you running 10 vms you must need indivisual OS licence for each vms
+* more operating system doesn't add business value.
+* Let's we are running 10 VMS, each OS consumes 2 GB of disckspace,5 GB of RAM, 10% of cpu. 
+So totaly we need 100 GB of diskspace,50 GB of RAM, 50 % of Cpu without ruuning single application even each os consumes lot of reasource.
+* each operating system Instance is a grass waste of resource.
+
+Again this model is also not good for runnig applications inside an isolated environment.
+
+Again Docker comes in to a Picture
+======================================
+https://www.raywenderlich.com/9159-docker-on-macos-getting-started#toc-anchor-014
+
+
+let's  developper working on .Net application/java application or python, 
+he has installed .net framework v4.0 in his workstation, application is working fine and he tested fully,
+developper gives it to Operation guy who deploys the application to dev/test/staging env, 
+but it fails in othere  machine where it was configured to V5.0.
+
+similarly  You're going to test using Python 2.7, and then it's going to run on Python 3 in production and something weird will happen. 
+Or you'll rely on the behavior of a certain version of an SSL library and another one will be installed. 
+You'll run your tests on Debian and production is on Red Hat and all sorts of weird things happen.
+And it's not just different software that can cause problems.
+The network topology might be different, or the security policies and storage might be different but the software has to run on it
+
+How do containers solve this problem?
+Put simply, a container consists of an entire runtime environment: an application, plus all its dependencies, 
+libraries and other binaries, 
+and configuration files needed to run it, bundled into one package. By containerizing the application platform and its dependencies, 
+differences in OS distributions and underlying infrastructure are abstracted away.
+
+Containers are a solution to the problem of how to get software to run reliably 
+when moved from one computing environment to another. 
+This could be from a developer's laptop to a test environment, from a staging environment into production, 
+and perhaps from a physical machine in a data center to a virtual machine in a private or public cloud.
+finally it works in developper laptop, it should run on anywhere.
+
+Docker containers are the light weight solutions to virtual machines and uses the host operating os. The best part is that, 
+you don't have to pre-allocate any RAM to the docker container. 
+It will take it as and when required. so with the docker container I don't have to worry about wastage of reasources. 
+since docker containers are light weight in nature you can spin up these containers within mili seconds. 
+Docker helps you to speed up testing against multiple operating environments.
+
+
+working Session on Docker:
+==========================
+# List all containers (only IDs)
+docker ps -aq
+# Stop all running containers
+docker stop $(docker ps -aq)
+# Remove all containers
+docker rm $(docker ps -aq)
+# Remove all images
+docker rmi $(docker images -q)
+
+
+docker pull ubuntu(By default, docker pull pulls images from Docker Hub. 
+It is also possible to manually specify the path of a registry to pull from. 
+For example, if you have set up a local registry, 
+you can specify its path to pull from it) docker pull ubuntu:14.04, docker pull ubuntu, docker pull fedora
+
+
+
+docker -version
+docker images
+
+docker run -it  - - name=bhupesh_demo ubuntu
+apt-get -y update
+apt-get install apache2
+service apache2 status
+service apache2 start
+To detach from a container cntrl(^)+p , cntrl(^)+q
+docker attach container_id — you will get IP address 
+
+[docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id]
+
+docker commit container_id  bht/apache — since you installed many software, the size of the image is increased
+Since apache2 is running inside the container, need to access the website in my laptop, 
+for this reason while running the container I wanted to do port mapping 
+Link port 82 
+
+docker run -it --name=bhupesh_demo -p 82:80 -d bht/apache2
+
+docker exec -it  container_id bash
+
+ipconfig getifaddr en0
+
+
+dockerfile
+==========
+
+FROM ubuntu:18.04
+  
+# File Author / Maintainer
+MAINTAINER bhupesh
+
+ENV TZ=Europe/Kiev
+
+# Update the repository sources list
+RUN apt-get -y update
+
+#:wq
+https://serverfault.com/questions/949991/how-to-install-tzdata-on-a-ubuntu-docker-image
+
+# Install and run apache
+RUN apt-get install -y apache2 && apt-get clean
+
+EXPOSE 80
+
+CMD apachectl -D FOREGROUND
+
+
+usefull links:
+==============
+
+https://www.youtube.com/watch?v=VtXNIy_noWg
+
+https://www.plutora.com/blog/understanding-ci-cd-pipeline
